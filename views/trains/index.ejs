@@ -1,0 +1,10 @@
+<% for(train in trainInfo.services){ %>
+  <p>Time: <%= trainInfo.services[train].departTime %></p>
+  <p>To: <%= trainInfo.services[train].destination %></p>
+  <p>Calling at: <%= trainInfo.services[train].callingAt %></p>
+  <% if(trainInfo.services[train].ontime === false){ %>
+    <p>Delayed By: <%= parseInt(trainInfo.services[train].estimatedDeparture) - parseInt(trainInfo.services[train].departTime) %></p>
+    <% }else{ %>
+    <p>On Time</p>
+  <br>
+<% } %>
